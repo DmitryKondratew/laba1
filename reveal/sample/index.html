@@ -1,0 +1,145 @@
+﻿<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Интегральное исчисление.js</title>
+
+		<link rel="stylesheet" href="dist/reset.css">
+		<link rel="stylesheet" href="dist/reveal.css">
+		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section data-markdown data-markdown-separator="^Notes:">
+					<script type="script/template">
+					 Математическая статистика
+					 =========================
+					
+					</script>
+				</section>
+
+				<section data-markdown data-markdown-separator="^Notes:">
+					
+						<script type="script/template">
+						 Определение математической статистики
+						 -------------------------------------
+						**Математическая статистика** - раздел математики, изучающий
+						математические методы сбора, систематизации, обработки и 
+						интерпретации результатов наблюдений с целью выявления 
+						статистических закономерностей. 
+						</script>
+					</section>
+				
+					<section data-markdown data-markdown-separator="^Notes:">
+						<script type="script/template" >
+							Определение выборки
+							-------------------------
+
+							Выборочной совокупностью или выборкой называется часть 
+							элементов генеральной совокупности, подлежащая исследованию. 
+							Она строится из генеральной совокупности с помощью 
+							случайного выбора, так чтобы каждый элемент выборки имел 
+							равные шансы быть отобранным.
+						</script>
+					</section>
+
+					<section data-markdown data-markdown-separator="^Notes:">
+						<script type="script/template" >
+							Определение выборки
+							-------------------------
+
+							Последовательность независимых случайных величин $x_1, x_2, \cdots, x_n,$ 
+							соответствующих всем возможным результатам $n$ статистики эксперементов и 
+							имеющих одинаковый закон распределения вероятностей со случайной величиной $\xi,$
+							называется выборкой объёма $n$, порожденной случайной величиной $\xi$.
+						</script>
+					</section>
+
+					<section data-markdown data-markdown-separator="^Notes:">
+						<script type="script/template" >
+							Определение выборочной средней
+							-------------------------
+
+							Последовательность независимых случайных величин $x_1, x_2, \cdots, x_n,$ 
+							соответствующих всем возможным результатам $n$ статистики эксперементов и 
+							имеющих одинаковый закон распределения вероятностей со случайной величиной $\xi,$
+							называется выборкой объёма $n$, порожденной случайной величиной $\xi$.
+						</script>
+					</section>
+
+					
+					
+				
+				</section>
+					
+
+				<section data-background="image/1.jpg" data-menu-title="Изображение 1">
+					<aside class="notes">
+						Изображение
+					</aside>
+				</section>
+
+				<section data-background="image/2.jpg" data-menu-title="Изображение 2">
+					<aside class="notes">
+						Изображение
+					</aside>
+				</section>
+
+				<section data-background="image/3.jpg" data-menu-title="Изображение 3">
+					<aside class="notes">
+						Изображение
+					</aside>
+				</section>
+				<section data-markdown data-separator-notes="^Note:" data-menu-title="Заключительный слайд">
+					<script type="text/template">
+						Спасибо за внимание
+					</script>
+					<span class="offscreen">
+						Конец презентации
+					</span>
+				</section>
+
+
+
+
+
+			</div>
+		</div>
+
+		<script src="dist/reveal.js"></script>
+		<script src="plugin/notes/notes.js"></script>
+		<script src="plugin/markdown/markdown.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+				hash: true,
+				center: false,
+				slideNumber: true,
+				math:
+				{
+					notificationsEnabled: true,
+				},
+				dependencies:[
+				{
+					src: "plugin/math-katex/math-katex.js",
+					asyns: true,
+					callback: () =>{
+
+					},
+				}],
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
