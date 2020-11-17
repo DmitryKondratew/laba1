@@ -29,10 +29,11 @@
 						<script type="script/template">
 						 Определение математической статистики
 						 -------------------------------------
-						**Математическая статистика** - раздел математики, изучающий
-						математические методы сбора, систематизации, обработки и 
-						интерпретации результатов наблюдений с целью выявления 
-						статистических закономерностей. 
+
+						**Математической статистикой** называется раздел математики,
+						занимающийся разработкой методов получения, описания и обработки
+						опытных данных с целью выявления и изучения закономерностей 
+						случайных массовых явлений для научных и практических выводов.
 						</script>
 					</section>
 				
@@ -210,6 +211,41 @@
 							$$s^2 = \frac{\sum\limits_{i=1}^m (x_i - \overline{x})^2n_i}{n}.$$
 						</script>
 					</section>
+
+					<section data-markdown data-markdown-separator="^Notes:">
+						<script type="text/template" >
+							Подбрось монетку
+							-------------------------
+
+							<div class="center">
+								<input id ="startGame" type="button" value="Подбросить монетку"> <!-- .element: style="font-size:20pt;"-->  
+							</div>
+							<div class="center">
+								<output id="winOut"></output>
+							</div>
+							<div class="center">
+								<output id="winOut1"></output>
+							</div>
+							<div class="clear"></div>
+
+						</script>
+					</section>
+
+					<section data-markdown data-markdown-separator="^Notes:">
+						<script type="text/template" >
+							Выборка
+							-------
+
+							<div class="center">
+								<input id ="startGame1" type="button" value="Сгенерировать"> <!-- .element: style="font-size:20pt;"-->  
+							</div>
+							<div class="center">
+								<output id="winOut2"></output>
+							</div>
+							<div class="clear"></div>
+
+						</script>
+					</section>
 					
 				
 				</section>
@@ -276,6 +312,65 @@
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
 			});
+
+
+
+
+
+
+			localStorage.setItem('bar', 0);
+			localStorage.setItem('bar1', 0);
+
+			window.onload = () =>  {
+
+
+				startGame.onclick = () => {
+					function getRandomInt(max) {
+  						return Math.floor(Math.random() * Math.floor(max));
+					}
+
+
+					winOut.innerHTML = '';
+					let a = getRandomInt(2);
+					if (a == 1) {
+						localStorage["bar"] = Number(localStorage["bar"]) + 1;
+						localStorage["bar1"] = Number(localStorage["bar1"]) + 1;
+						winOut.innerHTML = 'Орёл';
+					}
+					else {
+						localStorage["bar"] = Number(localStorage["bar"]) + 1;
+						winOut.innerHTML = 'Решка';
+					}
+					winOut1.innerHTML = 'Орёл выпадает с вероятностью: ' + localStorage["bar1"] + ' / ' + localStorage["bar"];
+					return;
+
+
+				}
+
+				startGame1.onclick = () => {
+					function getRandomInt(max) {
+		 				return Math.floor(Math.random() * Math.floor(max));
+					}
+					
+					var s = '';
+					for (let i = 0; i < 1000; i++) {
+  						s = s + '	' + String(getRandomInt(101));
+					}
+					winOut2.innerHTML = s;
+					return;
+				}
+			}
+
+
+
+
+
+
+
+
+
+
+
 		</script>
 	</body>
 </html>
