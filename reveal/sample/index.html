@@ -566,8 +566,6 @@
 
 
 
-			localStorage.setItem('bar', 0);
-			localStorage.setItem('bar1', 0);
 
 			window.onload = () =>  {
 
@@ -575,7 +573,12 @@
 				startGame.onclick = () => {
 
 
-
+					if (localStorage.getItem("bar") === null) {
+						localStorage.setItem('bar', 0);
+					}
+					if (localStorage.getItem("bar1") === null) {
+						localStorage.setItem('bar1', 0);
+					}
 					winOut.innerHTML = '';
 					let a = math.randomInt(1, 3);
 					if (a == 1) {
