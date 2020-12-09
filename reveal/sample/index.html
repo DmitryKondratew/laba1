@@ -38,12 +38,12 @@
 						опытных данных с целью выявления и изучения закономерностей 
 						случайных массовых явлений для научных и практических выводов.
 						</script>
-					</section>
+				</section>
 				
 					<section data-markdown data-markdown-separator="^Notes:">
 						<script type="script/template" >
 							Определение выборки
-							-------------------------
+							--------------------
 
 							Выборочной совокупностью или выборкой называется часть 
 							элементов генеральной совокупности, подлежащая исследованию. 
@@ -56,12 +56,22 @@
 					<section data-markdown data-markdown-separator="^Notes:">
 						<script type="script/template" >
 							Определение выборки
-							-------------------------
+							--------------------
 
 							Последовательность независимых случайных величин $x_1, x_2, \ldots, x_n,$ 
 							соответствующих всем возможным результатам $n$ статистики эксперементов и 
 							имеющих одинаковый закон распределения вероятностей со случайной величиной $\xi,$
 							называется выборкой объёма $n$, порожденной случайной величиной $\xi$.
+
+						</script>
+					</section>
+					<section data-markdown data-markdown-separator="^Notes:">
+						<script type="script/template" >
+							Пример выборки
+							---------------
+
+							Пример выборки: Число бракованных изделий при производстве мороженного в течение 
+							20 дней равнялось 24, 28, 5, 10, 22, 5, 19, 0, 3, 18, 20, 4, 0, 1, 21, 17, 10, 20, 4, 7.
 						</script>
 					</section>
 
@@ -306,15 +316,98 @@
 					</section>
 					
 				
-				</section>
+				
 					
-				<section data-markdown data-markdown-separator="^Notes:">
-					<script type="script/template" >
+				<section>
+					<h2>
 						Математическое ожидание
-						-----------------------
+					</h2>
+					<section>
+
+						$\textbf{Математическим ожиданием}$, или $\textbf{средним значением}$, $M(X)$ дискретной 
+						случайной величины $X$ называется сумма произведений всех ее значений 
+						на соответствующие им вероятности:
+						$$M(X) = \sum\limits_{i=1}^nx_ip_i$$
+					</section>
+					<section>
+
+						$\textbf{Задача}$. Известны законы распределения случайных величин $X$ и $Y$ - числа очков, 
+						выбиваемых 1-м и 2-м стрелками. 
 
 						
-					</script>
+						<table border="1" width="100%" cellpadding="5">
+							<tr>
+								<td>$x_i$</td>
+								<td><small>0</small></td>
+								<td><small>1</small></td>
+								<td><small>2</small></td>
+								<td><small>3</small></td>
+								<td><small>4</small></td>
+								<td><small>5</small></td>
+								<td><small>6</small></td>
+								<td><small>7</small></td>
+								<td><small>8</small></td>
+								<td><small>9</small></td>
+								<td><small>10</small></td>
+							</tr>
+							<tr>
+								<td>$p_i$</td>
+								<td><small>0,15</small></td>
+								<td><small>0,11</small></td>
+								<td><small>0,04</small></td>
+								<td><small>0,05</small></td>
+								<td><small>0,04</small></td>
+								<td><small>0,10</small></td>
+								<td><small>0,10</small></td>
+								<td><small>0,04</small></td>
+								<td><small>0,05</small></td>
+								<td><small>0,12</small></td>
+								<td><small>0,20</small></td>
+						   </tr>
+						  </table>
+					</section>
+					<section>
+						  <table border="1" width="100%" cellpadding="5">
+							<tr>
+								<td>$y_i$</td>
+								<td><small>0</small></td>
+								<td><small>1</small></td>
+								<td><small>2</small></td>
+								<td><small>3</small></td>
+								<td><small>4</small></td>
+								<td><small>5</small></td>
+								<td><small>6</small></td>
+								<td><small>7</small></td>
+								<td><small>8</small></td>
+								<td><small>9</small></td>
+								<td><small>10</small></td>
+							</tr>
+							<tr>
+								<td>$p_i$</td>
+								<td><small>0,01</small></td>
+								<td><small>0,03</small></td>
+								<td><small>0,05</small></td>
+								<td><small>0,09</small></td>
+								<td><small>0,11</small></td>
+								<td><small>0,24</small></td>
+								<td><small>0,21</small></td>
+								<td><small>0,10</small></td>
+								<td><small>0,10</small></td>
+								<td><small>0,04</small></td>
+								<td><small>0,02</small></td>
+						   </tr>
+						  </table>
+
+						  Вычислить $M(X)$ и $M(Y)$.
+
+
+						  $$\textbf{Решение: }$$
+						  <small>$$M(X) = 0 \cdot 0,15 + 1 \cdot 0,11 + 2 \cdot 0,04 + \ldots + 9 \cdot 0,12 + 10 \cdot 0,20 = 5,36$$</small>
+						  <small>$$M(Y) = 0 \cdot 0,01 + 1 \cdot 0,03 + 2 \cdot 0,05 + \ldots + 9 \cdot 0,04 + 10 \cdot 0,02 = 5,36$$</small>
+						
+						
+
+						</section>
 				</section>
 
 				<section data-background="image/1.jpg" data-menu-title="Изображение 1">
