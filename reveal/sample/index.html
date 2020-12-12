@@ -6,8 +6,8 @@
 
 		<title>Математическая статистика</title>
 
-		<script src="https://www.chartjs.org/dist/2.9.4/Chart.min.js"></script>
 		<script src="math.js"></script>
+		<script src="plotly.min.js"></script>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -297,20 +297,21 @@
 							<div class="clear"></div>
 					</section>
 
-					<section data-markdown data-markdown-separator="^Notes:">
-						<script type="text/template" >
+					<section>
+						<h2>
 							Выборка
-							-------
+						</h2>
+						<small>Случайно сгененрированная выборка из 1000 элементов со значенииями в пределах от 1 до 100</small>
+						<div class="center">
+							<input style="height:75px;width:200px" id ="startGame1" type="button" value="Сгенерировать">
+						</div>
+						<div class="center">
+							<output id="winOut2"></output>
+							<output id="winOut3"></output>
+						</div>
+						<div id='myDiv'></div>
+						<div class="clear"></div>
 
-							<div class="center">
-								<input id ="startGame1" type="button" value="Сгенерировать">
-							</div>
-							<div class="center">
-								<output id="winOut2"></output>
-							</div>
-							<div class="clear"></div>
-
-						</script>
 					</section>
 					
 				
@@ -598,17 +599,63 @@
 				}
 
 				startGame1.onclick = () => {
-					
+
+
 					var s = '';
-					var Number1 = [];
+					let Number1 = [];
 					for (let i = 0; i < 1000; i++) {
   						s = s + '	' + String(math.randomInt(1, 101));
 						Number1[i] = math.randomInt(1, 101)
 					}
 
-					var arr2 = [];
-					winOut2.innerHTML = Number1;
-					console.log(arr2);
+					let x = [];
+
+					for (let str of Number1) {
+						if (!x.includes(str)) {
+						x.push(str);
+						}
+					}
+
+					let y = [];
+					let n = 0;
+					let j = 0;
+					for (let str of x) {
+						for (let str1 of Number1)
+						{
+							if (str == str1) {
+								n = n + 1;
+							}
+						}
+						y[j] = n;
+						n = 0;
+						j = j + 1;
+					}
+
+					var trace1 = {
+					type: 'bar',
+					x,
+                    y,
+					marker: {
+						color: '#C8A2C8',
+						line: {
+							width: 2.5
+						}
+					}
+					};
+
+					var data = [ trace1 ];
+
+					var layout = { 
+					title: 'Диаграмма',
+					font: {size: 18}
+					};
+
+					var config = {responsive: true}
+
+					Plotly.newPlot('myDiv', data, layout, config );
+
+					//winOut2.innerHTML = x.length;
+					//winOut3.innerHTML = y.length;
 					return;
 				}
 			}
