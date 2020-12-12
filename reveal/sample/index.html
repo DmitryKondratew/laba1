@@ -282,6 +282,24 @@
 
 					<section>
 						<h2>
+							Медиана, максимум, минимум, размах
+						</h2>
+						<label> Выборка:
+							<input style="height:75px;width:200px" type="text" value="1,2,8,9,10,5,0,8,4,5,1,2,9,5,7" id="func">
+						</label>
+						<input style="height:75px;width:200px" id ="startGame2" type="button" value="Вычислить"> <br>
+						Медиана:
+						<output id="Med1"></output> <br>
+						Максимум:
+						<output id="Max1"></output> <br>
+						Минимум:
+						<output id="Min1"></output> <br>
+						Размах:
+						<output id="R1"></output> <br>
+					</section>
+
+					<section>
+						<h2>
 							Подбрось монетку
 						</h2>
 						<input style="height:75px;width:200px" id ="startGame" type="button" value="Подбросить монетку"> 
@@ -298,9 +316,9 @@
 					</section>
 
 					<section>
-						<h2>
-							Выборка
-						</h2>
+						<h3>
+							Выборка с 1000 элементами
+						</h3>
 						<small>Случайно сгененрированная выборка из 1000 элементов со значенииями в пределах от 1 до 100</small>
 						<div class="center">
 							<input style="height:75px;width:200px" id ="startGame1" type="button" value="Сгенерировать">
@@ -498,6 +516,141 @@
 					</section>
 				</section>
 
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						Исходный код
+						------------
+
+						Note:
+						Исходный код программ
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Медиана, максимум, минимум, размах
+						
+						```
+						var s  = document.querySelector('#func').value.split(",");
+						console.log(s);
+						let x = [];
+						let i = 0;
+						for (let str of s) {
+							x[i] = Number(str);
+							i = i + 1;
+						}
+						Med1.innerHTML = math.median(x);
+						Max1.innerHTML = math.max(x);
+						Min1.innerHTML = math.min(x);
+						R1.innerHTML = math.max(x) - math.min(x);
+						return;
+						```
+
+						Note:
+						Исходный код программы нахождения медианы, максимума, минимума, размаха
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Подбрось монетку
+						
+						```
+						if (localStorage.getItem("bar") === null) {
+							localStorage.setItem('bar', 0);
+						}
+						if (localStorage.getItem("bar1") === null) {
+							localStorage.setItem('bar1', 0);
+						}
+						winOut.innerHTML = '';
+						winOut5.innerHTML = '';
+						let a = math.randomInt(1, 3);
+						if (a == 1) {
+							localStorage["bar"] = Number(localStorage["bar"]) + 1;
+							localStorage["bar1"] = Number(localStorage["bar1"]) + 1;
+							winOut5.innerHTML = `<img width="200px" height="200px" src="image/5.jpg">`;
+							winOut.innerHTML = 'Орёл';
+						}
+						else {
+							localStorage["bar"] = Number(localStorage["bar"]) + 1;
+							winOut5.innerHTML = `<img width="200px" height="200px" src="image/4.jpg">`;
+							winOut.innerHTML = 'Решка';
+						}
+						winOut1.innerHTML = 'Орёл выпадает с вероятностью: ' + localStorage["bar1"] + ' / ' + localStorage["bar"];
+						return;
+						```
+
+						Note:
+						Исходный код игры "Подбрось монетку"
+					</script>
+				</section>
+
+				<section data-markdown data-separator-notes="^Note:">
+					<script type="text/template">
+						### Выборка с 1000 элементами
+						
+						```
+						var s = '';
+						let Number1 = [];
+						for (let i = 0; i < 1000; i++) {
+							s = s + '	' + String(math.randomInt(1, 101));
+							Number1[i] = math.randomInt(1, 101)
+						}
+
+						let x = [];
+
+						for (let str of Number1) {
+							if (!x.includes(str)) {
+							x.push(str);
+							}
+						}
+
+						let y = [];
+						let n = 0;
+						let j = 0;
+						for (let str of x) {
+							for (let str1 of Number1)
+							{
+								if (str == str1) {
+									n = n + 1;
+								}
+							}
+							y[j] = n;
+							n = 0;
+							j = j + 1;
+						}
+
+						var trace1 = {
+						type: 'bar',
+						x,
+						y,
+						marker: {
+							color: '#C8A2C8',
+							line: {
+								width: 2.5
+							}
+						}
+						};
+
+						var data = [ trace1 ];
+
+						var layout = { 
+						title: 'Диаграмма',
+						font: {size: 18}
+						};
+
+						var config = {responsive: true}
+
+						Plotly.newPlot('myDiv', data, layout, config );
+
+						return;
+						```
+
+						Note:
+						Исходный код программы строящей диограмму случайно сгенерированной выборки с 1000 элементами со значениями в пределах от 1 до 100
+					</script>
+				</section>
+
 				<section data-background="image/1.jpg" data-menu-title="Изображение 1">
 					<aside class="notes">
 						Изображение
@@ -654,16 +807,27 @@
 
 					Plotly.newPlot('myDiv', data, layout, config );
 
-					//winOut2.innerHTML = x.length;
-					//winOut3.innerHTML = y.length;
 					return;
 				}
+
+
+				startGame2.onclick = () => {
+					var s  = document.querySelector('#func').value.split(",");
+					console.log(s);
+					let x = [];
+					let i = 0;
+					for (let str of s) {
+						x[i] = Number(str);
+						i = i + 1;
+					}
+					Med1.innerHTML = math.median(x);
+					Max1.innerHTML = math.max(x);
+					Min1.innerHTML = math.min(x);
+					R1.innerHTML = math.max(x) - math.min(x);
+					return;
+
+				}
 			}
-
-
-
-
-
 
 
 
