@@ -19,7 +19,7 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-markdown data-markdown-separator="^Notes:">
+				<section class="center" data-markdown data-markdown-separator="^Notes:">
 					<script type="script/template">
 					 Математическая статистика
 					 =========================
@@ -88,19 +88,20 @@
 							где $w_i = \frac{n_i}{n}$
 						</script>
 					</section>
-					<section data-markdown data-markdown-separator="^Notes:">
-						<script type="script/template" >
+					<section>
+						<h2>
 							Пример нахождения выборочной средней
-							------------------------------------
+						</h2>
+						<section>
 							Число бракованных изделий при производстве мороженного в течение 20 дней равнялось 
 							24, 28, 5, 10, 22, 5, 19, 0, 3, 18, 20, 4, 0, 1, 21, 17, 10, 20, 4, 7. Найдите 
 							выборочную среднюю дневного выпуска бракованных изделий.
-
+						</section>
+						<section>
 							$\overline{x_B} = \frac{1}{n}\sum\limits_{i=1}^k x_i \cdot n_i = $
 
 							$ = \frac{24 + 28 + 5 \cdot 2 + 19 + 3 + 18 + 20 \cdot 2 + 4 \cdot 2 + 1 + 21 + 17 + 10 + 7}{20} = 11.9$
-
-						</script>
+						</section>
 					</section>
 
 					<section data-markdown data-markdown-separator="^Notes:">
@@ -219,34 +220,35 @@
 						</script>
 					</section>
 
-					<section data-markdown data-markdown-separator="^Notes:">
-						<script type="script/template" >
+					<section>
+						<h2>
 							Максимум и минимум
-							-------------------------
-
+						</h2>
+						<section>
 							Максимум $-$ это наибольший элемент выборки.
 							Минимум $-$ это наименьший элемент выборки.
-
+						</section>
+						<section>
 							$\textbf{Пример}$. Пусть в группе проведено тестирование студентов по высшей математике.
 							Результаты тестирования следующие: 9, 17, 19, 18, 23, 25, 19, 13, 10, 19, 
 							18, 19, 25, 10, 15, 16, 15, 20, 12. Найти максимальный и минимальный балл по тестированию.
 							$$x_{max} = 25$$
 							$$x_{min} = 9$$
-
-						</script>
+						</section>
 					</section>
-					<section data-markdown data-markdown-separator="^Notes:">
-						<script type="script/template" >
+					<section>
+						<h2>
 							Размах
-							-------------------------
-
+						</h2>
+						<section>
 							Вариационным размахом $R$ выборки называют разность между наибольшим и наименьшим вариантами ряда:
 							$$R = x_{max} - x_{min} .$$
-
+						</section>
+						<section>
 							$\textbf{Пример.}$ Число бракованных изделий при производстве мороженного в течение 20 дней равнялось 
 							24, 28, 5, 10, 22, 5, 19, 0, 3, 18, 20, 4, 0, 1, 21, 17, 10, 20, 4, 7.
 							$$R = x_{max} - x_{min} = 28 - 0 = 28$$
-						</script>
+						</section>
 					</section>
 
 
@@ -264,20 +266,21 @@
 						</script>
 					</section>
 
-					<section data-markdown data-markdown-separator="^Notes:">
-						<script type="script/template" >
+					<section>
+						<h2>
 							Пример вычисления дисперсии
-							---------------------------
-
+						</h2>
+						<section>
 							Пусть в группе проведено тестирование студентов по высшей математике.
 							Результаты тестирования следующие: 9, 17, 19, 18, 23, 25, 19, 13, 10, 19, 
 							18, 19, 25, 10, 15, 16, 15, 20, 12. Вычислить дисперсию.
-
+						</section>
+						<section>
 							$\overline{x_B} = \frac{9 + 17 + 19 + 18 + 23 + \ldots + 12}{20} = 17,35$
 
 
 							$D_B = \frac{(9 - 17,35)^2 + (17 - 17,35)^2 + \ldots + (12 - 17,35)^2}{20} = 24,45$
-						</script>
+						</section>
 					</section>
 
 					<section>
@@ -285,9 +288,9 @@
 							Медиана, максимум, минимум, размах
 						</h2>
 						<label> Выборка:
-							<input style="height:75px;width:200px" type="text" value="1,2,8,9,10,5,0,8,4,5,1,2,9,5,7" id="func">
+							<input style="height:75px; font-size:35px" type="text" value="1,2,8,9,10,5,0,8,4,5,1,2,9,5,7" id="func">
 						</label>
-						<input style="height:75px;width:200px" id ="startGame2" type="button" value="Вычислить"> <br>
+						<input style="height:75px; font-size:35px" font-size:100% id ="startGame2" type="button" value="Вычислить"> <br>
 						Медиана:
 						<output id="Med1"></output> <br>
 						Максимум:
@@ -302,7 +305,7 @@
 						<h2>
 							Подбрось монетку
 						</h2>
-						<input style="height:75px;width:200px" id ="startGame" type="button" value="Подбросить монетку"> 
+						<input style="height:75px; font-size:35px" id ="startGame" type="button" value="Подбросить монетку"> 
 							<div class="center">
 								<output id="winOut5"></output>
 							</div>
@@ -321,7 +324,7 @@
 						</h3>
 						<small>Случайно сгененрированная выборка из 1000 элементов со значенииями в пределах от 1 до 100</small>
 						<div class="center">
-							<input style="height:75px;width:200px" id ="startGame1" type="button" value="Сгенерировать">
+							<input style="height:75px; font-size:35px" id ="startGame1" type="button" value="Сгенерировать">
 						</div>
 						<div class="center">
 							<output id="winOut2"></output>
@@ -516,7 +519,7 @@
 					</section>
 				</section>
 
-				<section data-markdown data-separator-notes="^Note:">
+				<section class="center" data-markdown data-separator-notes="^Note:">
 					<script type="text/template">
 						Исходный код
 						------------
@@ -668,7 +671,7 @@
 						Изображение
 					</aside>
 				</section>
-				<section data-markdown data-separator-notes="^Note:" data-menu-title="Заключительный слайд">
+				<section class="center" data-markdown data-separator-notes="^Note:" data-menu-title="Заключительный слайд">
 					<script type="text/template">
 						Спасибо за внимание
 					</script>
@@ -696,6 +699,19 @@
 				hash: true,
 				center: false,
 				slideNumber: true,
+
+				menu: {
+					side: 'left', //Расположение меню
+					numbers: true, //Нумерация слайдов
+					markers: true, //Маркер посещения
+					titleSelector: 'h1, h2, h3, h4, h5, h6', //Заголовки, отображаемые в меню
+					useTextContentForMissingTitles: true, //Если заголовка нет, то подставляем первые слова слайда
+					hideMissingTitles: false, //Если заголовка нет, то скрываем слайд из меню
+					transitions: true, //Установить меню анимации
+					openButton: true, //Скрыть кнопку меню
+					keyboard: true, //Открытие меню по кнопке m
+				},
+				
 				math:
 				{
 					notificationsEnabled: true,
@@ -707,7 +723,12 @@
 					callback: () =>{
 
 					},
-				}],
+					
+				},{ 
+						//Menu
+						src: 'plugin/menu/menu.js',
+						async: true
+					}],
 
 				// Learn about plugins: https://revealjs.com/plugins/
 				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
